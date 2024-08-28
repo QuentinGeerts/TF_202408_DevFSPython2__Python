@@ -95,3 +95,43 @@ match choix:
     
     case _:
         print("Quitter")
+
+
+def type_variable (valeur):
+    
+    match valeur:
+        
+        case int():
+            print("La valeur est un entier")
+        case str():
+            print("La valeur est une string")
+        case list():
+            print("La valeur est un ensemble d'éléments")
+        case _:
+            print("Type non reconnu")
+            
+
+type_variable(5)
+type_variable("5")
+type_variable([5, 3, 3])
+type_variable(2.4)
+
+def verification_valeur (nombre):
+    
+    if type(nombre) != int and type(nombre) != float: return
+    
+    match nombre:
+        case x if x > 0:
+            print("Le nombre est positif")
+        case x if x < 0:
+            print("Le nombre est négatif")
+        case 0:
+            print("Zéro")
+        case _:
+            print("Valeur non supportée")
+            
+            
+verification_valeur(5)
+verification_valeur(-5)
+verification_valeur(0)
+verification_valeur('a')
